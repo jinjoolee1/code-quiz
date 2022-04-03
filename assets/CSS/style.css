@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #363d7c;
-    --secondary-color: #144a52;
+    --primary-color: #300a4e;
+    --secondary-color: #721dc2;
     --tertiary-color: #ffffff;
   }
   
@@ -11,9 +11,27 @@
   }
   
   
-  
   body {
   font-family: 'Arial', Helvetica, sans-serif;
   background-color: rgb(white);
   color: indigo;
   }
+
+/* Header style starts*/
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 100px 0;
+
+}
+
+.header a {
+    margin-left: 15px;
+}
+
+/*Timer*/
+
+#timer {
+    margin: 0 25px 0 0;
+}

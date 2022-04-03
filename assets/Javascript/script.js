@@ -6,7 +6,7 @@ const questions = [{
 
 }, {
     question: "The condition in an 'If/Else' statement must be contained in",
-    answers: [ "Brackets",  "Curly braces", "Parenthesis", "Quotations"], 
+    answers: [ "Brackets", "Parenthesis", "Curly braces",  "Quotations"], 
     correctAnswer: "Parenthesis"
     
 }, {
@@ -26,7 +26,8 @@ const questions = [{
 }];
 
 const timerEl = document.getElementById("timer");
-//buttons
+
+//Quiz buttons
 const startButton = document.getElementById('start-btn')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const submitButton = document.getElementById('submit-btn')
@@ -34,3 +35,19 @@ const answer1 = document.getElementById("btn1");
 const answer2 = document.getElementById("btn2");
 const answer3 = document.getElementById("btn3");
 const answer4 = document.getElementById("btn4");
+
+// Clears high scores using local storage
+function clearStorage() {
+    localStorage.clear();
+    window.location.reload();
+}
+
+// Event listeners
+
+document.getElementById("clear").onclick = clearHighscores;
+startButton.addEventListener('click', startGame)
+answer1.addEventListener("click", checkAnswer)
+answer2.addEventListener("click", checkAnswer)
+answer3.addEventListener("click", checkAnswer)
+answer4.addEventListener("click", checkAnswer)
+viewScoreList.addEventListener("click", viewHighScores)

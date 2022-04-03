@@ -10,14 +10,66 @@
 </head>
 
 <body>
-    <!--Check high scores-->
+  <!--Check high scores-->
       <section id="high-scores">
         <div class="style-indiv">
             <div class="style-3">
                 <p><h2>High Scores</h2></p>
                 <ol class="score-list"></ol>
-                <button id="goBack" class="go-back-btn btn-style-main">Go Back</button>
-                <button id="clearScores" class="clear-scores-btn btn-style-main">Clear All Scores</button>
+
+  <!--Go back and Clear All Scores buttons-->
+    <button id="goBack" class="go-back-btn btn-style-main">Go Back</button>
+    <button id="clearScores" class="clear-scores-btn btn-style-main">Clear All Scores</button>
+            </div>
+         </div>
+  <!-- Timer -->
+    <h3>
+    Time: <span class="time" id="timer"></span>
+    </h3>
+
+  <!--Quiz basics-->
+          <div id="starter-container" class="show">
+            <div class="container start">
+                <h1>Code Quiz Challenge</h1>  
+                <p>Answer the following code-related questions within the time limit. Wrong answers subtract 10 seconds from the timer so make sure you are positive about your answers!
+                </p>
+            </div>    
+        </div>
+        
+<!-- Questions HTML section -->
+        <div id="question-container" class="hide">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="buttons">
+              <button id='btn1' class="btn">Answer 1</button>
+              <button id='btn2' class="btn">Answer 2</button>
+              <button id='btn3' class="btn">Answer 3</button>
+              <button id='btn4' class="btn">Answer 4</button>
+          </div>
+      </div>
+      <div id="display" class="correct hide"></div>
+      <div id="display2" class="incorrect hide"></div>
+  </div>
+  <div class="controls">
+      <button id="start-btn" class="start-btn" type="submit">Start Quiz</button>
+  </div>
+  </div>
+
+<!--Final score section-->
+          <section class=".wrapper1" id="final-score">
+            <div class="style-indiv">
+                <div class="style-2">
+                    <h2>All Done!</h2>
+                    <p>Your final score is: <span id="score">0</span></p>
+                     <p class="p-style-1">Enter initials:
+                     <span class="initials-form style-4"><input placeholder="initials" id="initials"
+                     class="span-1"></span>
+                    <button id="submit-score" class="submit-score-btn btn-style-main">Submit</button>
+                    <hr>
+                        </p>
+                </div>
             </div>
 
+<script src="./assets/js/script.js"></script>
+
 </body>
+</html>
