@@ -36,7 +36,52 @@ const answer2 = document.getElementById("btn2");
 const answer3 = document.getElementById("btn3");
 const answer4 = document.getElementById("btn4");
 
-// Clears high scores using local storage
+// Start quiz
+function startGame() {
+    showElement(QUIZ_SECTIONS, QUIZ_SECTION);
+    
+    displayTime();  
+    displayQuestion();
+  
+    startTimer();
+  }
+
+// Timer 
+function displayTime() {
+    TIME_REMAINING.textContent = totalTime;
+  }
+  
+  function startTimer() {
+    totalTimeInterval = setInterval(function() {
+      totalTime--;
+      displayTime();
+      checkTime();
+  
+    }, 1000);
+  }
+  
+  function checkTime() {
+    if (totalTime <= 0) {
+      totalTime = 0;
+      endGame();
+    }
+  }
+
+// Right answer function
+function rightAnswer() {
+    score = timeLeft
+    feedback.innerHTML = ("Correct");
+    setTimeout(function() {feedback.innerHTML = ("");}, 800)
+}
+//  Wrong answer function
+function wrongAnswer() {
+    timeLeft = (timeLeft - 10)
+    feedback.innerHTML = ("Wrong");
+    setTimeout(function() {feedback.innerHTML = ("");}, 800)
+}
+
+
+// Clears high scores
 function clearStorage() {
     localStorage.clear();
     window.location.reload();
