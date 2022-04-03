@@ -27,15 +27,6 @@ const questions = [{
 
 const timerEl = document.getElementById("timer");
 
-//Quiz buttons
-const startButton = document.getElementById('start-btn')
-const answerButtonsElement = document.getElementById('answer-buttons')
-const submitButton = document.getElementById('submit-btn')
-const answer1 = document.getElementById("btn1");
-const answer2 = document.getElementById("btn2");
-const answer3 = document.getElementById("btn3");
-const answer4 = document.getElementById("btn4");
-
 // Start quiz
 function startGame() {
     showElement(QUIZ_SECTIONS, QUIZ_SECTION);
@@ -67,6 +58,28 @@ function displayTime() {
     }
   }
 
+//Quiz questions functions
+function displayQuestion() {
+  QUESTION.textContent = QUESTION_LIST[currentQuestion].question;
+
+  displayChoiceList();
+}
+
+function displayChoiceList() {
+  CHOICES.innerHTML = "";
+
+  QUESTION_LIST[currentQuestion].choices.forEach(function(answer, index) {
+    const li = document.createElement("li");
+    li.dataset.index = index;
+    const button = document.createElement("button");
+    button.textContent = (index + 1) + ". " + answer;
+    li.appendChild(button);
+    CHOICES.appendChild(li);
+  });
+}
+
+
+
 // Right answer function
 function rightAnswer() {
     score = timeLeft
@@ -80,6 +93,14 @@ function wrongAnswer() {
     setTimeout(function() {feedback.innerHTML = ("");}, 800)
 }
 
+//Quiz buttons
+const startButton = document.getElementById('start-btn')
+const answerButtonsElement = document.getElementById('answer-buttons')
+const submitButton = document.getElementById('submit-btn')
+const answer1 = document.getElementById("btn1");
+const answer2 = document.getElementById("btn2");
+const answer3 = document.getElementById("btn3");
+const answer4 = document.getElementById("btn4");
 
 // Clears high scores
 function clearStorage() {
